@@ -7,6 +7,7 @@ using namespace std;
 double winRate;
 double avgLength;
 
+// 宣告為 int 有需要再轉 double
 int totalWin = 0;
 int totalLength = 0;
 int iterations = 10000;
@@ -56,7 +57,7 @@ void game() {
 
 int rollDice() {
   int number = 0;
-  number += (rand() % 6) + 1; // First roll, number = number + (rand() % 6) + 1;
+  number += (rand() % 6) + 1; // First roll
   number += (rand() % 6) + 1; // Second roll
   return number;
 }
