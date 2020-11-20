@@ -26,7 +26,8 @@ int main() {
 
   winRate = (double)totalWin / (double)iterations;
   avgLength = (double)totalLength / (double)iterations;
-  cout << "answer1 = " << winRate << endl << "answer2 = " << avgLength << endl;
+  cout << "answer1 = " << winRate << endl;
+  cout << "answer2 = " << avgLength << endl;
   return 0;
 }
 
