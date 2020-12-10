@@ -44,7 +44,7 @@ void show() {
     cout << endl;
   }
 
-  for (int i = 0; i <= Width; i++) {
+  for (int i = 0; i < Width; i++) {
     cout << "---";
   }
   cout << endl;
