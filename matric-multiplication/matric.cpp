@@ -73,8 +73,7 @@ int main() {
   /* Calculation begins for the resultant matrix. */
   for (i = 0; i < row1; i++) {
     for (j = 0; j < col1; j++) {
-      M3[i][k] = 0;
-      for (k = 0; k < col2; k++)
+      for (k = 0, M3[i][k] = 0; k < col2; k++)
         M3[i][k] += M1[i][j] * M2[j][k];
     }
   }
