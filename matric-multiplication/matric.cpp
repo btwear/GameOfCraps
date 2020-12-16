@@ -31,14 +31,18 @@ int main() {
   /* Allocating memory for three matrix rows. */
   M1 = (int **)malloc(sizeof(int *) * row1);
   M2 = (int **)malloc(sizeof(int *) * row2);
-  M3 = (int **)malloc(sizeof(int *) * col1);
+  M3 = (int **)malloc(sizeof(int *) * row1);
   /* Allocating memory for the col of three matrices. */
   for (i = 0; i < row1; i++)
     M1[i] = (int *)malloc(sizeof(int) * col1);
   for (i = 0; i < row2; i++)
     M2[i] = (int *)malloc(sizeof(int) * col2);
-  for (i = 0; i < col1; i++)
-    M3[i] = (int *)malloc(sizeof(int) * row2);
+  for (i = 0; i < row1; i++) {
+    M3[i] = (int *)malloc(sizeof(int) * col2);
+    for (j = 0; j < col2; j++) {
+      M3[i][j] = 0;
+    }
+  }
 
   M1[0][0] = 1;
   M1[0][1] = 2;
@@ -73,7 +77,7 @@ int main() {
   /* Calculation begins for the resultant matrix. */
   for (i = 0; i < row1; i++) {
     for (j = 0; j < col1; j++) {
-      for (k = 0, M3[i][k] = 0; k < col2; k++)
+      for (k = 0; k < col2; k++)
         M3[i][k] += M1[i][j] * M2[j][k];
     }
   }
